@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter03/models/products.dart';
 import 'package:flutter03/screens/product/components/search_box.dart';
+import 'package:flutter03/screens/product_details/details_screen.dart';
 
 import 'category_list.dart';
 import 'product_card.dart';
@@ -18,7 +19,6 @@ class Body extends StatelessWidget {
           Expanded(
             child: Stack(
               children: <Widget>[
-                // Our background
                 Container(
                   margin: EdgeInsets.only(top: 70),
                   decoration: BoxDecoration(
@@ -30,22 +30,22 @@ class Body extends StatelessWidget {
                   ),
                 ),
                 ListView.builder(
-                  // here we use our demo procuts list
                   itemCount: products.length,
                   itemBuilder: (context, index) => ProductCard(
                     itemIndex: index,
                     product: products[index],
-                    press: () {},
-                    // press: () {
-                    //   Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //       builder: (context) => DetailsScreen(
-                    //         product: products[index],
-                    //       ),
-                    //     ),
-                    //   );
-                    // },
+                    press: () {
+                      Future.delayed(const Duration(milliseconds: 100000), () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DetailsScreen(
+                              product: products[index],
+                            ),
+                          ),
+                        );
+                      });
+                    },
                   ),
                 )
               ],

@@ -23,7 +23,7 @@ class ProductCard extends StatelessWidget {
       ),
       height: 160,
       child: InkWell(
-        // onTap: press,
+        onTap: press(),
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: <Widget>[
@@ -31,8 +31,7 @@ class ProductCard extends StatelessWidget {
               height: 136,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(22),
-                color: itemIndex.isEven ? Colors.amber[400] : Colors.amber,
-                // boxShadow: ,
+                color: Colors.black,
               ),
               child: Container(
                 margin: EdgeInsets.only(right: 10),
@@ -42,10 +41,9 @@ class ProductCard extends StatelessWidget {
                 ),
               ),
             ),
-            // our product image
             Positioned(
               top: 0,
-              right: 40,
+              right: 0,
               child: Hero(
                 tag: '${product.id}',
                 child: Container(
@@ -59,7 +57,6 @@ class ProductCard extends StatelessWidget {
                 ),
               ),
             ),
-
             Positioned(
               bottom: 0,
               left: 0,

@@ -20,17 +20,17 @@ List<Product> products = [
     image: "assets/images/sofa.png",
   ),
   Product(
-    id: 1,
+    id: 2,
     price: 56,
     title: "Product 2",
     description: "lorem ipsum ",
     image: "assets/images/sofa.png",
   ),
   Product(
-    id: 1,
+    id: 3,
     price: 56,
     title: "Product 3",
-    description: "",
+    description: "lorem ipsum ",
     image: "assets/images/sofa.png",
   ),
 ];
